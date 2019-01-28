@@ -2,33 +2,108 @@ from subprocess import call
 import os
 import argparse
 from tkinter import *
-
-top = Tk()
+from tkinter import filedialog
 
 # single video vs. part of playlist vs. full plalylist selection
+
+root = Tk()
+
+root.title("Youtube to MP3")
+root.geometry("500x200")
+root.resizable(width = False, height = False)
+
+var = StringVar()
+
+
+
 
 def selection():
     sel = str(var.get())
     selection_label.config(text = sel)
 
-var = StringVar()
 
-r1 = Radiobutton(top, text = "Single", variable = var, value = "Convert a single video", command = selection)
-r1.pack(anchor = NW)
 
-r2 = Radiobutton(top, text = "Part", variable = var, value = "Convert a portion of a playlist", command = selection)
-r2.pack(anchor = N)
+r1 = Radiobutton(root, text = "Single", variable = var, value = "Convert a single video", command = selection)
+r1.grid(row = 0, column = 0)
+#r1.deselect()
+#r1.place(x = 80, y = 100)
 
-r3 = Radiobutton(top, text = "Full", variable = var, value = "Convert an entire playlist", command = selection)
-r3.pack(anchor = NE)
+r2 = Radiobutton(root, text = "Part", variable = var, value = "Convert a portion of a playlist", command = selection)
+r2.grid(row = 0, column = 1)
+#r2.deselect()
+#r2.place(x = 180, y = 100)
 
-selection_label = Label(top)
-selection_label.pack()
+r3 = Radiobutton(root, text = "Full", variable = var, value = "Convert an entire playlist", command = selection)
+r3.grid(row = 0, column = 2)
+#r3.deselect()
+#r3.place(x = 280, y = 100)
+
+def browse_button():
+    global filepath
+    filename = filedialog.askdirectory()
+    filepath.set(filename)
+
+filepath = StringVar()
+
+
+Label(root, text = "Select download folder: ").grid(row = 4, sticky = W)
+#directory_path_label.anchor(anchor = W)
+
+directory_entry = Entry(root, bd = 5, width = 40)
+directory_entry.grid(row = 4, column = 1, sticky = E)
+#irectory_entry.pack(side = LEFT)
+
+selection_label = Label(root)
+selection_label.place(x = 150, y = 120)
+
+Label(root, text = "Video or Playlist URL").grid(row = 5, sticky = W)
+#url_label.pack(side = LEFT)
+url_entry = Entry(root, bd = 5, width = 45)
+url_entry.grid(row = 5, column = 1, sticky = E)
+#url_entry.pack(side = RIGHT)
+
+root.mainloop()
 
 # URL entry
-url_label = Label(top, text = "Video or Playlist URL")
-url_label.pack(side = LEFT)
-E1 = Entry(top, bd = 5)
-E1.pack(side = RIGHT)
 
-top.mainloop()
+
+
+'''
+class Window(Frame):
+
+    def __init__(self, master = None):
+        Frame.__init__(self, master)
+        self.master = master
+        self.init_window()
+
+
+    def init_window(self):
+        self.master.title("Youtube to MP3")
+        self.pack(fill = BOTH, expand = 1)
+        self.options()
+
+    def options(self):
+        
+        var = StringVar()
+        def selection():
+            sel = str(var.get())
+            selection_label.config(text = sel)
+
+        r1 = Radiobutton(root, text = "Single", variable = var, value = "Convert a single video")
+        r1.place(x = 80, y = 25)
+        r1.deselect()
+
+        r2 = Radiobutton(root, text = "Part", variable = var, value = "Convert a portion of a playlist")
+        r2.place(x = 180, y = 25)
+        r2.deselect()
+
+        r3 = Radiobutton(root, text = "Full", variable = var, value = "Convert an entire playlist")
+        r3.place(x = 280, y = 25)
+        r3.deselect()
+
+        selection_label = Label(root)
+
+        
+'''
+
+
