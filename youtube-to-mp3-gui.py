@@ -5,8 +5,6 @@ from tkinter import filedialog
 import youtube_dl
 import copy
 
-# single video vs. part of playlist vs. full plalylist selection
-
 root = Tk()
 
 root.title("Youtube to MP3")
@@ -18,6 +16,15 @@ selection_var.set("Single")
 
 def selection():
     sel = str(selection_var.get())
+    
+    if sel == "Convert a portion of a playlist":
+        start_index_entry.config(state = 'normal')
+        end_index_entry.config(state = 'normal')
+
+    else:
+        start_index_entry.config(state = 'disabled')
+        end_index_entry.config(state = 'disabled')
+    
     selection_label.config(text = sel)
 
 radiogroup = Frame(root)
@@ -40,9 +47,9 @@ end_index = StringVar()
 Label(radiogroup, text = "First video index:").grid(row = 0, column = 3)
 Label(radiogroup, text = "Last video index:").grid(row = 0, column = 5)
 
-start_index_entry = Entry(radiogroup, bd = 5, textvariable = start_index, width = 3)
+start_index_entry = Entry(radiogroup, state = DISABLED, textvariable = start_index, width = 3)
 start_index_entry.grid(row = 0, column = 4)
-end_index_entry = Entry(radiogroup, bd = 5, textvariable = end_index, width = 3)
+end_index_entry = Entry(radiogroup, state = DISABLED, textvariable = end_index, width = 3)
 end_index_entry.grid(row = 0, column = 6)
 
 radiogroup.grid(row = 0, columnspan = 3)
@@ -59,7 +66,7 @@ filepath = StringVar()
 # filepath selection
 Label(root, text = "Select download folder: ").grid(row = 4, sticky = W)
 
-directory_entry = Entry(root, bd = 5, width = 34, textvariable = filepath)
+directory_entry = Entry(root, width = 34, textvariable = filepath)
 directory_entry.grid(row = 4, column = 1, sticky = W)
 
 browse_button = Button(root, text = "Browse", command = directory_browser)
@@ -68,7 +75,7 @@ browse_button.grid(row = 4, column = 2)
 # video/playlist URL insertion
 video_url = StringVar()
 Label(root, text = "Video or Playlist URL:").grid(row = 5, sticky = W)
-url_entry = Entry(root, bd = 5, textvariable = video_url, width = 34)
+url_entry = Entry(root, textvariable = video_url, width = 34)
 url_entry.grid(row = 5, column = 1, sticky = W)
 
 selection_label = Label(root)
