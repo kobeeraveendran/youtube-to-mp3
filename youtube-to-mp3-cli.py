@@ -15,7 +15,7 @@ args = parser.parse_args()
 pwd = input("Enter folder to save converted video(s) in: ")
 os.chdir(pwd)
 
-if not args.song_range and not full_playlist:
+if not args.song_range and not args.full_playlist:
     cmd = "youtube-dl --extract-audio --audio-format mp3 " + str(args.url)
     cmd = cmd.split()
 
