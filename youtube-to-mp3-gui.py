@@ -1,6 +1,5 @@
 from subprocess import call
 import os
-import argparse
 from tkinter import *
 from tkinter import filedialog
 
@@ -12,47 +11,53 @@ root.title("Youtube to MP3")
 root.geometry("560x150")
 root.resizable(width = False, height = False)
 
-var = StringVar()
+selection_var = StringVar()
 
 def selection():
-    sel = str(var.get())
+    sel = str(selection_var.get())
     selection_label.config(text = sel)
 
 radiogroup = Frame(root)
 
-r1 = Radiobutton(radiogroup, text = "Single", variable = var, value = "Convert a single video", command = selection)
+r1 = Radiobutton(radiogroup, text = "Single", variable = selection_var, value = "Convert a single video", command = selection)
 r1.grid(row = 0, column = 0, padx = 50)
 #r1.deselect()
 
-r2 = Radiobutton(radiogroup, text = "Part", variable = var, value = "Convert a portion of a playlist", command = selection)
+r2 = Radiobutton(radiogroup, text = "Part", variable = selection_var, value = "Convert a portion of a playlist", command = selection)
 r2.grid(row = 0, column = 1, padx = 50)
 #r2.deselect()
 
-r3 = Radiobutton(radiogroup, text = "Full", variable = var, value = "Convert an entire playlist", command = selection)
+r3 = Radiobutton(radiogroup, text = "Full", variable = selection_var, value = "Convert an entire playlist", command = selection)
 r3.grid(row = 0, column = 2, padx = 50)
 #r3.deselect()
 
 radiogroup.grid(row = 0, columnspan = 3)
 
-def browse_button():
+currdir = os.getcwd()
+
+def directory_browser():
     global filepath
-    filename = filedialog.askdirectory()
+    filename = filedialog.askdirectory(parent = root, initialdir = currdir, title = "Choose where to save converted videos")
     filepath.set(filename)
 
 filepath = StringVar()
 
-
+# filepath selection
 Label(root, text = "Select download folder: ").grid(row = 4, sticky = W)
 
-directory_entry = Entry(root, bd = 5, width = 40)
-directory_entry.grid(row = 4, column = 1, sticky = E)
+directory_entry = Entry(root, bd = 5, width = 34, textvariable = filepath)
+directory_entry.grid(row = 4, column = 1, sticky = W)
+
+browse_button = Button(root, text = "Browse", command = directory_browser)
+browse_button.grid(row = 4, column = 2)
+
+# video/playlist URL insertion
+Label(root, text = "Video or Playlist URL:").grid(row = 5, sticky = W)
+url_entry = Entry(root, bd = 5, width = 34)
+url_entry.grid(row = 5, column = 1, sticky = W)
 
 selection_label = Label(root)
 selection_label.grid(row = 6, columnspan = 3)
-
-Label(root, text = "Video or Playlist URL:").grid(row = 5, sticky = W)
-url_entry = Entry(root, bd = 5, width = 40)
-url_entry.grid(row = 5, column = 1, sticky = E)
 
 root.mainloop()
 
