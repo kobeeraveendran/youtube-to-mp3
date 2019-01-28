@@ -4,11 +4,12 @@ from tkinter import *
 from tkinter import filedialog
 import youtube_dl
 import copy
+import webbrowser
 
 root = Tk()
 
 root.title("Youtube to MP3")
-root.geometry("560x150")
+root.geometry("560x200")
 root.resizable(width = False, height = False)
 
 selection_var = StringVar()
@@ -69,7 +70,7 @@ Label(root, text = "Select download folder: ").grid(row = 4, sticky = W)
 directory_entry = Entry(root, width = 34, textvariable = filepath)
 directory_entry.grid(row = 4, column = 1, sticky = W)
 
-browse_button = Button(root, text = "Browse", command = directory_browser)
+browse_button = Button(root, text = "Browse", command = directory_browser, bg = "blue")
 browse_button.grid(row = 4, column = 2)
 
 # video/playlist URL insertion
@@ -80,6 +81,21 @@ url_entry.grid(row = 5, column = 1, sticky = W)
 
 selection_label = Label(root, text = "Convert a single video")
 selection_label.grid(row = 6, columnspan = 3)
+
+blank_label = Label(root)
+blank_label.grid(row = 7, columnspan = 3)
+
+def callback(event):
+    webbrowser.open_new(r"http://github.com/kobeeraveendran")
+
+# source link/contact info
+source_label = Label(root, text = "Source and other projects viewable at github.com/kobeeraveendran", foreground = "blue")
+source_label.grid(row = 8, columnspan = 3)
+source_label.bind("<Button-1>", callback)
+contact_label = Label(root, text = "Report bugs at github.com/kobeeraveendran/youtube-to-mp3/issues")
+contact_label2 = Label(root, text = "or contact iGPhX#5860 on Discord.")
+contact_label.grid(row = 9, columnspan = 3)
+contact_label2.grid(row = 10, columnspan = 3)
 
 # youtube-dl options and download command
 
@@ -115,7 +131,7 @@ def convert_video():
 # TODO: add safety checks for all fields before converting:
 # make sure the URL field is not empty, maybe ensure filepath isn't empty
 
-convert_button = Button(root, text = "Convert", command = convert_video)
+convert_button = Button(root, text = "Convert", bg = "blue", command = convert_video)
 convert_button.grid(row = 5, column = 2)
 
 root.mainloop()
