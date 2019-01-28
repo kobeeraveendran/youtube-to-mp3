@@ -30,7 +30,7 @@ def selection():
 radiogroup = Frame(root)
 
 r1 = Radiobutton(radiogroup, text = "Single", variable = selection_var, value = "Convert a single video", command = selection)
-r1.deselect()
+r1.select()
 r1.grid(row = 0, column = 0)
 
 r2 = Radiobutton(radiogroup, text = "Part", variable = selection_var, value = "Convert a portion of a playlist", command = selection)
@@ -78,7 +78,7 @@ Label(root, text = "Video or Playlist URL:").grid(row = 5, sticky = W)
 url_entry = Entry(root, textvariable = video_url, width = 34)
 url_entry.grid(row = 5, column = 1, sticky = W)
 
-selection_label = Label(root)
+selection_label = Label(root, text = "Convert a single video")
 selection_label.grid(row = 6, columnspan = 3)
 
 # youtube-dl options and download command
@@ -111,6 +111,9 @@ def convert_video():
 
     with youtube_dl.YoutubeDL(ydl_options) as ydl:
         ydl.download(video_url)
+
+# TODO: add safety checks for all fields before converting:
+# make sure the URL field is not empty, maybe ensure filepath isn't empty
 
 convert_button = Button(root, text = "Convert", command = convert_video)
 convert_button.grid(row = 5, column = 2)
