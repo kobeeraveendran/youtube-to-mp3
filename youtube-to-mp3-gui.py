@@ -9,7 +9,7 @@ import webbrowser
 root = Tk()
 
 root.title("Youtube to MP3")
-root.geometry("560x200")
+#root.geometry("560x200")
 root.resizable(width = False, height = False)
 
 selection_var = StringVar()
@@ -39,7 +39,7 @@ r2.grid(row = 0, column = 1)
 r2.deselect()
 
 r3 = Radiobutton(radiogroup, text = "Full", variable = selection_var, value = "Convert an entire playlist", command = selection)
-r3.grid(row = 0, column = 2, padx = (0, 50))
+r3.grid(row = 0, column = 2, padx = (0, 30))
 r3.deselect()
 
 start_index = StringVar()
@@ -63,6 +63,7 @@ def directory_browser():
     filepath.set(filename)
 
 filepath = StringVar()
+filepath.set(currdir)
 
 # filepath selection
 Label(root, text = "Select download folder: ").grid(row = 4, sticky = W)
@@ -70,7 +71,7 @@ Label(root, text = "Select download folder: ").grid(row = 4, sticky = W)
 directory_entry = Entry(root, width = 34, textvariable = filepath)
 directory_entry.grid(row = 4, column = 1, sticky = W)
 
-browse_button = Button(root, text = "Browse", command = directory_browser, bg = "blue")
+browse_button = Button(root, text = "Browse", command = directory_browser)
 browse_button.grid(row = 4, column = 2)
 
 # video/playlist URL insertion
@@ -106,32 +107,37 @@ ydl_base_options = {
         "preferredcodec": "mp3", 
         "preferredquality": "192"
     }], 
-    "ignoreerrors": True
+    "outtmpl": video_url.get() + "%(title)s.%(ext)s", 
+    "ignoreerrors": True,
 }
 
 # convert video, cd if applicable, other background processes
 
+# TODO: try to find a way to stop the freezing during video deletion
 def convert_video():
     os.chdir(filepath.get())
 
     # TODO: add branched functionality for whichever option the user selected
     ydl_options = copy.deepcopy(ydl_base_options)
 
-    if selection_var.get() == "Single":
+    if selection_var.get() == "Convert a single video":
         ydl_options["noplaylist"] = True
 
-    # TODO: add start range and end range entry boxes (may need try/catch)
-    if selection_var.get() == "Part":
-        ydl_options["playliststart"] = start_index.get()
-        ydl_options["playlistend"] = end_index.get()
+    # TODO: add progress bar for downloads (or for playlists, show number of songs completed)
+    if selection_var.get() == "Convert a portion of a playlist":
+        ydl_options["playliststart"] = int(start_index.get())
+        ydl_options["playlistend"] = int(end_index.get())
+
+    if selection_var.get() == "Convert an entire playlist":
+        ydl_options["noplaylist"] = False
 
     with youtube_dl.YoutubeDL(ydl_options) as ydl:
-        ydl.download(video_url)
+        ydl.download([video_url.get()])
 
 # TODO: add safety checks for all fields before converting:
 # make sure the URL field is not empty, maybe ensure filepath isn't empty
 
-convert_button = Button(root, text = "Convert", bg = "blue", command = convert_video)
+convert_button = Button(root, text = "Convert", command = convert_video)
 convert_button.grid(row = 5, column = 2)
 
 root.mainloop()
