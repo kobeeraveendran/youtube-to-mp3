@@ -6,7 +6,7 @@
 
 1. Download FFmpeg
   * Linux users
-   Run `sudo apt-get install ffmpeg` from the command line.
+      Run `sudo apt-get install ffmpeg` from the command line.
 
   * macOS users
-    Using homebrew
+      Using homebrew
