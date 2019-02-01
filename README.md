@@ -11,15 +11,15 @@
 
       If you have homebrew installed (easiest):
 
-        Enter `brew install ffmpeg` in Terminal.
+      Enter `brew install ffmpeg` in Terminal.
       
       If you don't have homebrew installed, but would like to install it to make this easier:
 
-        Follow the instructions here: http://macappstore.org/ffmpeg/
+      Follow the instructions here: http://macappstore.org/ffmpeg/
 
       Alternatively, the hard way (if you have a 64-bit OS):
 
-        1. Download the static build here: https://ffmpeg.zeranoe.com/builds/
+      Download the static build here: https://ffmpeg.zeranoe.com/builds/
 
   * Windows users
 
@@ -38,5 +38,5 @@
       Work in progress
 
   * Linux users
-  
+
       Work in progress
