@@ -3,11 +3,11 @@
 ## Installation instructions
 
 ### 1. Download FFmpeg
-  * Linux users
+####  * Linux users
 
       Run `sudo apt-get install ffmpeg` from the command line.
 
-  * macOS users
+####  * macOS users
 
       If you have homebrew installed (easiest):
 
@@ -21,7 +21,7 @@
 
       Download the static build here: https://ffmpeg.zeranoe.com/builds/
 
-  * Windows users
+####  * Windows users
 
       Follow the instructions here: https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg
 
