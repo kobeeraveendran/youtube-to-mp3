@@ -10,15 +10,19 @@
   * macOS users
 
       If you have homebrew installed (easiest):
+
         Enter `brew install ffmpeg` in Terminal.
       
       If you don't have homebrew installed, but would like to install it to make this easier:
+
         Follow the instructions here: http://macappstore.org/ffmpeg/
 
       Alternatively, the hard way (if you have a 64-bit OS):
+
         1. Download the static build here: https://ffmpeg.zeranoe.com/builds/
 
   * Windows users
+
       Follow the instructions here: https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg
 
 2. __Download Youtube to MP3__
@@ -30,7 +34,9 @@
       4. After clicking the dmg file, drag the icon in the folder that pops up to your Dock.
 
   * Windows users
+
       Work in progress
 
   * Linux users
+  
       Work in progress
