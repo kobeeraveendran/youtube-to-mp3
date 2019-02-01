@@ -9,21 +9,21 @@
 
 ####  macOS users
 
-      If you have homebrew installed (easiest):
+###### If you have homebrew installed (easiest):
 
-      Enter `brew install ffmpeg` in Terminal.
+###### Enter `brew install ffmpeg` in Terminal.
       
-      If you don't have homebrew installed, but would like to install it to make this easier:
+###### If you don't have homebrew installed, but would like to install it to make this easier:
 
-      Follow the instructions here: http://macappstore.org/ffmpeg/
+###### Follow the instructions here: http://macappstore.org/ffmpeg/
 
-      Alternatively, the hard way (if you have a 64-bit OS):
+###### Alternatively, the hard way (if you have a 64-bit OS):
 
-      Download the static build here: https://ffmpeg.zeranoe.com/builds/
+###### Download the static build here: https://ffmpeg.zeranoe.com/builds/
 
 ####  Windows users
 
-      Follow the instructions here: https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg
+###### Follow the instructions here: https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg
 
 ### 2. __Download Youtube to MP3__
   * macOS users
