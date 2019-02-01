@@ -2,7 +2,7 @@
 
 ## Installation instructions
 
-1. __Download FFmpeg__
+### 1. Download FFmpeg
   * Linux users
 
       Run `sudo apt-get install ffmpeg` from the command line.
@@ -25,7 +25,7 @@
 
       Follow the instructions here: https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg
 
-2. __Download Youtube to MP3__
+### 2. __Download Youtube to MP3__
   * macOS users
     
       1. On this page, go to the `build_osx` folder, and click on `Youtube to MP3-1.0.dmg`.
