@@ -28,10 +28,15 @@
 ### 2. __Download Youtube to MP3__
 <details>
 <summary>macOS users</summary>
-  1. On this page, go to the `build_osx` folder, and click on `Youtube to MP3-1.0.dmg`.
-  2. Near the top right, click the __Download__ button.
-  3. For the pop-up in the download bar, click the arrow next to the Discard button and select "Keep".
-  4. After clicking the dmg file, drag the icon in the folder that pops up to your Dock.
+
+1. On this page, go to the `build_osx` folder, and click on `Youtube to MP3-1.0.dmg`.
+
+2. Near the top right, click the __Download__ button.
+
+3. For the pop-up in the download bar, click the arrow next to the Discard button and select "Keep".
+
+4. After clicking the dmg file, drag the icon in the folder that pops up to your Dock.
+
 
 </details>
 
