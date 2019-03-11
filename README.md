@@ -30,7 +30,7 @@ Download the static build here: https://ffmpeg.zeranoe.com/builds/
 
 ##### Follow the instructions here: https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg
 
-### 2. __Download Youtube to MP3__
+### 2. __Download and Set Up Youtube to MP3__
 <details>
 <summary>macOS users</summary>
 
@@ -38,6 +38,7 @@ Download the static build here: https://ffmpeg.zeranoe.com/builds/
 2. Near the top right, click the __Download__ button.
 3. For the pop-up in the download bar, click the arrow next to the Discard button and select "Keep".
 4. After clicking the dmg file, drag the icon in the folder that pops up to your Dock.
+5. Run `setup_mac.sh` by double-clicking it or running `./setup_mac.sh` at the command line. You're now good to go.
 
 
 </details>
@@ -49,3 +50,10 @@ Download the static build here: https://ffmpeg.zeranoe.com/builds/
 #### Linux users
 
       Work in progress
+
+## Usage
+
+1. Open the GUI application by double-clicking `youtube-to-mp3-gui.py` wherever you installed it.
+2. Browse for a download location (where your converted mp3 file will be downloaded). The default is the same folder that `youtube-to-mp3-gui.py` is in.
+3. Select the type of conversion you'd like to make; default is "Single Video" if the URL is that of a single video or video in a playlist. To download a playlist or part of a playlist, select one of the other two options.
+3. Enter a valid YouTube video or playlist URL corresponding to your choice above and click "Convert". After a few seconds your conversions should appear in the folder you chose above.
