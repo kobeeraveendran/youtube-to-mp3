@@ -69,7 +69,7 @@ Simply download (save it somewhere you can find easily later) and run `youtube-t
 1. Browse for a download location (where your converted mp3 file will be downloaded). The default is the same folder that `youtube-to-mp3-gui.py` is in.
 2. Select the type of conversion you'd like to make; default is "Single Video" if the URL is that of a single video or video in a playlist. To download an entire playlist or part of a playlist, select one of the other two options.
 
-**NOTE: At the moment, converting Single videos is functional and has been tested. The other two options will likely not be functional. A fix is coming.**
+**NOTE: At the moment, converting Single videos is functional and has been tested for Windows users. The other two options will likely not be functional on Windows and other platforms. A fix is coming.**
 
 3. Enter a valid YouTube video or playlist URL corresponding to your choice above and click "Convert". After a few seconds your conversions should appear in the folder you chose above.
 
