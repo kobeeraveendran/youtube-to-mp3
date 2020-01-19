@@ -28,7 +28,7 @@ Download the static build here: https://ffmpeg.zeranoe.com/builds/
 
 ####  Windows users
 
-##### Follow the instructions here: https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg
+##### No setup required. Proceed to Step 2 (Download and Set Up Youtube to MP3)
 
 ### 2. __Download and Set Up Youtube to MP3__
 <details>
@@ -45,7 +45,7 @@ Download the static build here: https://ffmpeg.zeranoe.com/builds/
 
 #### Windows users
 
-      Work in progress
+      Simply download (save it somewhere you can find easily later) and run `youtube-to-mp3-gui.exe` at [gui/dist](gui/dist)
 
 #### Linux users
 
