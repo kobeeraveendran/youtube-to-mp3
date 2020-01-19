@@ -58,6 +58,8 @@ Download the static build here: https://ffmpeg.zeranoe.com/builds/
 
 Download `youtube-to-mp3-gui.exe` from [gui/dist](https://github.com/kobeeraveendran/youtube-to-mp3/blob/master/gui/dist/youtube-to-mp3-gui.exe) by clicking "Download" near the right of your screen (next to History), and save it somewhere you can find it easily later.
 
+*(If you are prompted with a dialog box saying that the app is unrecognized, click "More Info" then "Run Anyway"). This only appears because I developed this myself and released it here, open source, and is such not registered with Microsoft.*
+
 </details>
 
 <details>
