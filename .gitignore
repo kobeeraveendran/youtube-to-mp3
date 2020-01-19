@@ -3,3 +3,9 @@
 Python
 Youtube to MP3
 lib/*
+gui/build/
+gui/ffmpeg.exe
+gui/ffplay.exe
+gui/ffprobe.exe
+gui/youtube-to-mp3-gui.spec
+__pycache__
