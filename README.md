@@ -45,7 +45,7 @@ Download the static build here: https://ffmpeg.zeranoe.com/builds/
 
 #### Windows users
 
-      Simply download (save it somewhere you can find easily later) and run `youtube-to-mp3-gui.exe` at [gui/dist](gui/dist/youtube-to-mp3-gui.exe)
+      Simply download (save it somewhere you can find easily later) and run `youtube-to-mp3-gui.exe` at [gui/dist](youtube-to-mp3-gui.exe)
 
 #### Linux users
 
