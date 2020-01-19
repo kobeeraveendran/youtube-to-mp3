@@ -1,13 +1,19 @@
 # youtube-to-mp3 
 
-## Installation instructions
+## Installation instructions 
+
+### (if installing on Windows, skip to step 2)
 
 ### 1. Download FFmpeg
-####  Linux users
+
+<details>
+<summary>Linux users</summary>
 
 ##### Run `sudo apt-get install ffmpeg` from the command line.
+</details>
 
-####  macOS users
+<details>
+<summary>macOS users</summary>
 
 ##### If you have homebrew installed (easiest):
 
@@ -26,9 +32,13 @@ Follow the instructions here: http://macappstore.org/ffmpeg/
 
 Download the static build here: https://ffmpeg.zeranoe.com/builds/
 
-####  Windows users
+</details>
+
+<details>
+<summary>Windows users</summary>
 
 ##### No setup required. Proceed to Step 2 (Download and Set Up Youtube to MP3)
+</details>
 
 ### 2. __Download and Set Up Youtube to MP3__
 <details>
@@ -43,9 +53,12 @@ Download the static build here: https://ffmpeg.zeranoe.com/builds/
 
 </details>
 
-#### Windows users
+<details>
+<summary>Windows users</summary>
 
 Simply download (save it somewhere you can find easily later) and run `youtube-to-mp3-gui.exe` in [gui/dist](https://github.com/kobeeraveendran/youtube-to-mp3/blob/master/gui/dist/youtube-to-mp3-gui.exe).
+
+</details>
 
 #### Linux users
 
