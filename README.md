@@ -60,9 +60,11 @@ Simply download (save it somewhere you can find easily later) and run `youtube-t
 
 </details>
 
-#### Linux users
+<details>
+<summary>Linux users</summary>
 
       Work in progress
+</details>
 
 ## Usage
 
