@@ -9,3 +9,4 @@ gui/ffplay.exe
 gui/ffprobe.exe
 gui/youtube-to-mp3-gui.spec
 __pycache__
+gui/dist/youtube-to-mp3-gui/
